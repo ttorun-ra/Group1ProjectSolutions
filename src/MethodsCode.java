@@ -22,35 +22,16 @@ public class MethodsCode {
      */
     //write you code here
     public static int getTotal(String number) {
-//        int number = Integer.parseInt(a);
-//        if (number == 0) {
-//            return -1;
-//        }
-//        int sum = 0;
-//        int remainder = 0;
-//        while (number != 0) {
-//            remainder = number / 10;
-//            if (remainder % 2 == 0) {
-//                sum = sum + remainder * 2;
-//                number = number / 10;
-//            } else {
-//                sum=sum+ remainder * -1;
-//                number = number / 10;
-//            }
-//        }
-//
-//    return sum ;
-//}
-int sum=0;
-for (int i = 0; i < number.length(); i++) {
-
+        int sum = 0;
+        for (int i = 0; i < number.length(); i++) {
             Integer digit = Integer.valueOf(number.substring(i, i + 1));
             if (digit % 2 == 0) {
                 sum += digit * 2;
             } else {
                 sum += digit * -1;
             }
-        }return sum == 0 ? -1 : sum;
+        }
+        return sum == 0 ? -1 : sum;
 
 
     }
@@ -62,15 +43,15 @@ for (int i = 0; i < number.length(); i++) {
      * that accepts bankStatements as List<String> argument
      * and return total of bank statements
      * Note: if total is zero then return -1
-     *
+     * <p>
      * ex: arguments is like: {$15.00, $10.20, $2,050,75} and return is 2075.95
-     *
+     * <p>
      * Hint: remove the unnecessary icons and calculate the total
      */
     //write you code here
-    public double bankStatementCalculator (List<String> bankStatements) {
+    public double bankStatementCalculator(List<String> bankStatements) {
         double sum = 0;
-        for (String str: bankStatements) {
+        for (String str : bankStatements) {
             String replace = str.replace("$", "");
             String replace2 = replace.replace(",", "");
             double num = Double.valueOf(replace2);
@@ -78,10 +59,10 @@ for (int i = 0; i < number.length(); i++) {
         }
         if (sum == 0) {
             return -1;
-        }
-        else
+        } else
             return sum;
     }
+
     /**
      * TASK 3
      * Write a method named randomGenerator
@@ -89,20 +70,19 @@ for (int i = 0; i < number.length(); i++) {
      * and return random number with provided bound which is bigger than 1
      * if bound is less than 1  return -1
      * if bound is equal to 1 return 1
-     *
+     * <p>
      * ex: 1 -> 1
      * ex2: -1000 -> -1
      * ex3: 10 -> (random number between 1 and 10)
      */
     //write you code here
-
     public int randomGenerator(int bound) {
         if (bound < 1) {
             return -1;
         }
         if (bound == 1) {
             return 1;
-        }else{
+        } else {
 
         }
         Random random = new Random();
@@ -120,7 +100,7 @@ for (int i = 0; i < number.length(); i++) {
      * and return string population of selected country in
      * countries list
      * if selected country is not in the countries list then return "-1"
-     *
+     * <p>
      * NOTE:
      * this method will not work if you don't finish the randomNumber method
      * <
@@ -128,28 +108,26 @@ for (int i = 0; i < number.length(); i++) {
      * countries -> "USA", "Mexico", "Canada", "Brazil"
      * populations -> "350000000", "100000000", "50000000", "120000000"
      * selected country -> "Canada"
-     *
+     * <p>
      * return is "50000000"
      * because: canada has population of 50000000
-     *
+     * <p>
      * ex2:
-     *
+     * <p>
      * countries -> "USA", "Mexico", "Canada", "Brazil"
      * populations -> "350000000", "100000000", "50000000", "120000000"
      * selected country -> "Germany"
-     *
+     * <p>
      * return is "-1"
      */
     //write you code here
-    public String getPopulation (List<String> countries, List<String> populations, String randomCountry) {
+    public String getPopulation(List<String> countries, List<String> populations, String randomCountry) {
         if (countries.contains(randomCountry)) {
             int index = countries.indexOf(randomCountry);
             return populations.get(index);
-        }
-        else
+        } else
             return "-1";
     }
-
 
 
     //end
@@ -158,31 +136,31 @@ for (int i = 0; i < number.length(); i++) {
      * TASK 5
      * Bob was writing names of his relatives, but he did some mistakes while writing them
      * you as a best friend want to help him to correct that list
-     *
+     * <p>
      * Write a method named correctListOfNames
      * that accepts names as List<String>, wrongName as string and correctName as string argument
      * and return corrected names
-     *
+     * <p>
      * ex:
      * names: {"Alice", "Bob", "Alo"}
      * wrongName: Alo
      * correctName: Ali
-     *
+     * <p>
      * return {"Alice", "Bob", "Ali"}
      */
     // write your code here
-        public List<String> correctListOfNames (List<String> names, String wrongName, String correctName){
+    public List<String> correctListOfNames(List<String> names, String wrongName, String correctName) {
 
-            for (int i=0;i<names.size();i++) {
+        for (int i = 0; i < names.size(); i++) {
 
-                if (names.get(i).equals(wrongName)){
+            if (names.get(i).equals(wrongName)) {
 
-                    names.set(i,correctName);
-                }
-                }
-                  return names;
-                }
+                names.set(i, correctName);
             }
-   //end
+        }
+        return names;
+    }
+}
+//end
 
-
+///
