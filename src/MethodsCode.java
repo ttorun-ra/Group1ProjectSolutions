@@ -18,7 +18,7 @@ public class MethodsCode {
      * because: (8 * 2) + (5 * -1) = 11
      * <p>
      * ex2: "0" ->  -1
-     * because:
+     * because://
      */
     //write you code here
     public static int getTotal(String number) {
